@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ZeForge Academy | Project 2 | Javascript Color Game</title>
+    <link rel="stylesheet" type="text/css" href="color-game.css">
+</head>
+<body>
+
+    <h2>Guess Color Game<br><span id="colorDisplay">RGB</span></h2>
+
+    <div id="stripe">
+        <button id="newColors">New Game</button>
+        <span id="message"></span>
+        <button type="submit" class="mode"><img src="easy.png" alt="Easy Mode Button">Easy</button>
+        <button type="submit" class="mode selected"><img src="medium.png" alt="Medium Mode Button">Medium</button>
+        <button type="submit" class="mode"><img src="hard.png" alt="Hard Mode Button">Hard</button>
+    </div>
+
+    <div id="container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+
+    <button type="button" class="collapsible">Click for Game Info</button>
+    <div class="content">
+        <p>
+            Guess which square matches the random RGB color, for example: RGB(212, 96, 252).<br>
+            <span>Click on the square corresponding to the random RGB color.</span>    
+            <ul>
+                <li><strong>EASY mode</strong> - 3 squares (colors)</li>
+                <li><strong>MEDIUM mode</strong> - 6 squares (colors)</li>
+                <li><strong>HARD mode</strong> - 9 squares (colors)</li>
+            </ul>
+            <span>Good luck :)</span>
+        </p>
+    </div>
+
+    <div class="footer">ZeForge Academy Zenica - 2019 | Project 2 - Javascript Game | Benijamin Mahmutović</div>    
+
+<script type="text/javascript" src="color-game.js"></script>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    for(i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+            if(content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
+    
+</body>
+</html>
